@@ -7,17 +7,22 @@ namespace RoverControllerIOS.Models
 {
     public class Rover : IVehicle
     {
+        #region Properties
         public int X { get; private set; }
         public int Y { get; private set; }
         public Direction Direction { get; private set; }
+        #endregion
 
+        #region Constructors
         public Rover(int x, int y, Direction direction)
         {
             X = x;
             Y = y;
             Direction = direction;
         }
+        #endregion
 
+        #region Movement related Methods
 
         public void Move()
         {
@@ -77,10 +82,11 @@ namespace RoverControllerIOS.Models
                     break;
             }
         }
-
+        #endregion
         public override string ToString()
         {
             return $"{X} {Y} {Direction}";
         }
+        
     }
 }

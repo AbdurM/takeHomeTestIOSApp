@@ -16,10 +16,12 @@ namespace RoverControllerIOS
         {
         }
 
+
+        #region View lifecycle methods
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-           
         }
 
         public override void ViewWillAppear(bool animated)
@@ -29,8 +31,6 @@ namespace RoverControllerIOS
             MoveButton.TouchUpInside += OnClickMoveButton;
             RightButton.TouchUpInside += OnClickRightButton;
             LeftButton.TouchUpInside += OnClickLeftButton;
-
-
         }
 
 
@@ -44,11 +44,9 @@ namespace RoverControllerIOS
 
         }
 
-        /// <summary>
-        /// Button Actions
-        /// </summary>
-        /// <param name="o"></param>
-        /// <param name="e"></param>
+        #endregion
+
+        #region Button Actions
         void OnClickMoveButton(object o, EventArgs e)
         {
             RoverViewModel.Rover.Move();
@@ -68,6 +66,8 @@ namespace RoverControllerIOS
             RoverViewModel.Rover.TurnLeft();
             DirectionValueLabel.Text = RoverViewModel.DirectionText;
         }
+
+        #endregion
 
     }
 }
