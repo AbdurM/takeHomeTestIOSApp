@@ -145,6 +145,7 @@
           <DependentUpon>RoverViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="ViewModels\RoverViewModel.cs" />
+        <Compile Include="Constants.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

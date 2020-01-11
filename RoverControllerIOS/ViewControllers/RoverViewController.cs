@@ -22,6 +22,16 @@ namespace RoverControllerIOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            //setting up initial values of labels
+            XCoordinateValueLabel.Text = RoverViewModel.XCoordinateText;
+            YCoordinateValueLabel.Text = RoverViewModel.YCoordinateText;
+            DirectionValueLabel.Text = RoverViewModel.DirectionText;
+
+            //rounded corners for buttons
+            MoveButton.Layer.CornerRadius = Constants.ControlButtonBorder;
+            RightButton.Layer.CornerRadius = Constants.ControlButtonBorder;
+            LeftButton.Layer.CornerRadius = Constants.ControlButtonBorder;
         }
 
         public override void ViewWillAppear(bool animated)
