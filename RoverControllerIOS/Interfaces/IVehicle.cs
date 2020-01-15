@@ -8,7 +8,7 @@ namespace RoverControllerIOS.Interfaces
         int Y { get;}
         Direction Direction {get;}
 
-        void Move();
+        void MoveForward();
         void TurnLeft();
         void TurnRight();
     }

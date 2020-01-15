@@ -3,7 +3,7 @@ namespace RoverControllerIOS
 {
     public static class Constants
     {
-        public const int ControlButtonBorder = 5;
+        public const int ControlButtonCornerRadius = 5;
         
     }
 }

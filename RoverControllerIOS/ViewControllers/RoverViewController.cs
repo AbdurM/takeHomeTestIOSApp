@@ -1,8 +1,4 @@
-﻿using Foundation;
-using RoverControllerIOS.Enums;
-using RoverControllerIOS.Interfaces;
-using RoverControllerIOS.Models;
-using RoverControllerIOS.ViewModels;
+﻿using RoverControllerIOS.ViewModels;
 using System;
 using UIKit;
 
@@ -29,9 +25,9 @@ namespace RoverControllerIOS
             DirectionValueLabel.Text = RoverViewModel.DirectionText;
 
             //rounded corners for buttons
-            MoveButton.Layer.CornerRadius = Constants.ControlButtonBorder;
-            RightButton.Layer.CornerRadius = Constants.ControlButtonBorder;
-            LeftButton.Layer.CornerRadius = Constants.ControlButtonBorder;
+            MoveButton.Layer.CornerRadius = Constants.ControlButtonCornerRadius;
+            RightButton.Layer.CornerRadius = Constants.ControlButtonCornerRadius;
+            LeftButton.Layer.CornerRadius = Constants.ControlButtonCornerRadius;
         }
 
         public override void ViewWillAppear(bool animated)
@@ -59,7 +55,7 @@ namespace RoverControllerIOS
         #region Button Actions
         void OnClickMoveButton(object o, EventArgs e)
         {
-            RoverViewModel.Rover.Move();
+            RoverViewModel.MoveRoverForward();
             XCoordinateValueLabel.Text = RoverViewModel.XCoordinateText;
             YCoordinateValueLabel.Text = RoverViewModel.YCoordinateText;
             
@@ -67,13 +63,13 @@ namespace RoverControllerIOS
 
         void OnClickRightButton(object o, EventArgs e)
         {
-            RoverViewModel.Rover.TurnRight();
+            RoverViewModel.TurnRoverRight();
             DirectionValueLabel.Text = RoverViewModel.DirectionText;
         }
 
         void OnClickLeftButton(object o, EventArgs e)
         {
-            RoverViewModel.Rover.TurnLeft();
+            RoverViewModel.TurnRoverLeft();
             DirectionValueLabel.Text = RoverViewModel.DirectionText;
         }
 
